@@ -1,7 +1,7 @@
 {
   "name": "pruebagbp",
   "version": "1.0.0",
-  "description": "",
+  "description": "**¿Cómo inicializar el proyecto?**",
   "main": "server.js",
   "type": "module",
   "scripts": {

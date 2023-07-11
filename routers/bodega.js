@@ -39,7 +39,7 @@ appBodegas.get('/', (req, res) => {
                     console.log(data);
                     res.send(data);
                 }
-            )            
+            )
     }
 });
 
@@ -51,7 +51,7 @@ appBodegas.get('/', (req, res) => {
  * @param {created_by} 
  *  
  */
-appBodegas.post('/', (req, res) => { 
+appBodegas.post('/', (req, res) => {
     con.query(
         /*SQL*/ `INSERT INTO bodegas SET ?`,
         req.body,
