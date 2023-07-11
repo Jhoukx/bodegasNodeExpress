@@ -14,9 +14,32 @@ appBodegas.use((req, res, next) => {
 });
 
 appBodegas.get('/', (req, res) => {
-    console.log(req.query);
-    console.log('>:)');
-    res.send();
+    const query = req.query;
+    /**
+     ** Veficiar datos del Query para la consulta
+     * @urlExample {http://127.0.15.1:5005/bodegas?_sort=nombre&_order=desc}
+     */
+    switch (Object.keys(query).length) {
+        case 0:
+            con.query(
+                `SELECT * FROM bodegas`,
+                (err, data, fils) => {
+                    console.log(err);
+                    console.log(data);
+                    res.send(data);
+                }
+            );
+            break
+        default:
+            con.query(
+                `SELECT * FROM bodegas ORDER BY ${query._sort} ${query._order}`,
+                (err, data, fils) => {
+                    console.log(err);
+                    console.log(data);
+                    res.send(data);
+                }
+            )            
+    }
 });
 
 export default appBodegas;
