@@ -13,12 +13,13 @@ appBodegas.use((req, res, next) => {
     next();
 });
 
+/**
+ ** Veficiar datos del Query para la consulta
+ * @consultaGeneral {http://127.0.15.1:5005/bodegas}
+ * @consultaFiltrada {http://127.0.15.1:5005/bodegas?_sort=nombre&_order=desc}
+ */
 appBodegas.get('/', (req, res) => {
     const query = req.query;
-    /**
-     ** Veficiar datos del Query para la consulta
-     * @urlExample {http://127.0.15.1:5005/bodegas?_sort=nombre&_order=desc}
-     */
     switch (Object.keys(query).length) {
         case 0:
             con.query(
@@ -42,4 +43,24 @@ appBodegas.get('/', (req, res) => {
     }
 });
 
+/**
+ * Datos de entrada principales
+ * @param {nombre}
+ * @param {id_responsable} 
+ * @param {estado} 
+ * @param {created_by} 
+ *  
+ */
+appBodegas.post('/', (req, res) => { 
+    con.query(
+        /*SQL*/ `INSERT INTO bodegas SET ?`,
+        req.body,
+        (err, data, fils) => {
+            console.log(err);
+            console.log(data);
+            console.log(fils);
+            res.send('Se agregó exitosamente :D');
+        }
+    );
+});
 export default appBodegas;
