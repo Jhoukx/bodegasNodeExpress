@@ -240,3 +240,9 @@ INSERT INTO `users` (`id`, `nombre`, `email`, `email_verified_at`, `estado`, `cr
 (19, 'juan8', 'juan 8@hotmail.com', NULL, 1, NULL, NULL, NULL, '12345', NULL, NULL, NULL),
 (20, 'juan9', 'juan 9@hotmail.com', NULL, 1, NULL, NULL, NULL, '12345', NULL, NULL, NULL);
 
+INSERT INTO users (`id`, `nombre`, `email`, `email_verified_at`, `estado`, `created_by`, `update_by`, `foto`, `password`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(21, 'Admin', "admin@gmail.com", NULL, 1, NULL, NULL, NULL, '54321', NULL, NULL, NULL);
+
+INSERT INTO bodegas (`id`, `nombre`, `id_responsable`, `estado`, `created_by`, `update_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(52, 'Bodega Default', 21, 11, 21, NULL, NULL, NULL, NULL);
+
