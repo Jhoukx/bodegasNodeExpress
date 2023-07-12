@@ -246,3 +246,5 @@ INSERT INTO users (`id`, `nombre`, `email`, `email_verified_at`, `estado`, `crea
 INSERT INTO bodegas (`id`, `nombre`, `id_responsable`, `estado`, `created_by`, `update_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (52, 'Bodega Default', 21, 11, 21, NULL, NULL, NULL, NULL);
 
+SELECT MAX(id) FROM productos;
+DELETE FROM productos WHERE id = 65; 
