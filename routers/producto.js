@@ -42,9 +42,9 @@ appProducto.post('/', (req, res) => {
     //*Producto
     con.query(
         /*sql*/ `INSERT INTO productos SET ?`,
-         objProductos,
+        objProductos,
         (err, data, fils) => {
-            console.log('Error en producto\n',err);
+            console.log('Error en producto\n', err);
             console.log(objProductos);
             console.log('Valores productos:\n', data);
 
@@ -71,7 +71,7 @@ appProducto.post('/', (req, res) => {
                         /*sql*/ `INSERT INTO inventarios SET ?`,
                         objInventario,
                         (err, data, fills) => {
-                            console.log('Inventario err',err);
+                            console.log('Inventario err', err);
                             console.log('valores inventario:\n', data);
 
                             res.send('Se enviaron los datos exitosamente :D');
