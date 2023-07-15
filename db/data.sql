@@ -247,4 +247,6 @@ INSERT INTO bodegas (`id`, `nombre`, `id_responsable`, `estado`, `created_by`, `
 (52, 'Bodega Default', 21, 11, 21, NULL, NULL, NULL, NULL);
 
 SELECT MAX(id) FROM productos;
-DELETE FROM productos WHERE id = 65; 
+DELETE FROM productos WHERE id = 65;
+
+INSERT INTO bodegas (id,nombre) VALUES (54,'PruebaID');
