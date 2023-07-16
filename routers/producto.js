@@ -28,7 +28,12 @@ appProducto.get('/', (req, res) => {
         }
     )
 });
-
+/**
+ * Datos de entrada
+ * @param {nombre}
+ * @param {created_by}
+ * @param {cantidad}
+ */
 appProducto.post('/', (req, res) => {
     //Desustructurar body de la peticion
     let { nombre, created_by, cantidad } = req.body;
