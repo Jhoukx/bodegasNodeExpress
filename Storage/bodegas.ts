@@ -2,13 +2,13 @@ import { Type, Transform, Expose } from 'class-transformer';
 export class bodegas {
     @Expose({ name: 'id' })
     @Transform(({ value }) => {
-        if (/^[0-9]+$/.test(value)) return value; else throw { status: 400, message: `El dato ${value} no coincide con los parametros` };},
+        if (/^([0-9]|undefined)+$/.test(value)) return value; else throw { status: 400, message: `El dato id ${value} no coincide con los parametros` };},
         { toClassOnly:true})
     ID: number
     
     @Expose({ name: 'nombre' })
     @Transform(({ value }) => {
-        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El dato ${value} no coincide con los parametros` }},
+        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El dato  nombre ${value} no coincide con los parametros` }},
         {toClassOnly:true})
     Name: string
 
@@ -26,19 +26,19 @@ export class bodegas {
     
     @Expose({ name: 'created_by' })
     @Transform(({ value }) => {
-        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El parametro ${value} no coincide con los parametros` }},
+        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El parametro created_by ${value} no coincide con los parametros` }},
         { toClassOnly: true })
     Creado_por: string
 
     @Expose({ name: 'update_by'})
     @Transform(({ value }) => {
-        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El parametro ${value} no coincide con los parametros` }},
+        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El parametro update_by ${value} no coincide con los parametros` }},
         { toClassOnly: true })
     Actualizado_por: string
 
     @Expose({ name: 'created_at' })
     @Transform(({ value }) => {
-        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El parametro ${value} no coincide con los parametros` }},
+        if (/^[a-z A-Z]+$/.test(value)) return value; else throw { status: 400, message: `El parametro created_at ${value} no coincide con los parametros` }},
         { toClassOnly: true })
     Creado_a: string
     

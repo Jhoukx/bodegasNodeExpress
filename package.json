@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "tsc":"tsc -w",
+    "tsc": "tsc -w",
     "dev": "nodemon --quiet server.js",
     "start": "node server.js"
   },

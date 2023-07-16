@@ -24,10 +24,10 @@ export class bodegas {
 __decorate([
     Expose({ name: 'id' }),
     Transform(({ value }) => {
-        if (/^[0-9]+$/.test(value))
+        if (/^([0-9]|undefined)+$/.test(value))
             return value;
         else
-            throw { status: 400, message: `El dato ${value} no coincide con los parametros` };
+            throw { status: 400, message: `El dato id ${value} no coincide con los parametros` };
     }, { toClassOnly: true }),
     __metadata("design:type", Number)
 ], bodegas.prototype, "ID", void 0);
@@ -37,7 +37,7 @@ __decorate([
         if (/^[a-z A-Z]+$/.test(value))
             return value;
         else
-            throw { status: 400, message: `El dato ${value} no coincide con los parametros` };
+            throw { status: 400, message: `El dato  nombre ${value} no coincide con los parametros` };
     }, { toClassOnly: true }),
     __metadata("design:type", String)
 ], bodegas.prototype, "Name", void 0);
@@ -67,7 +67,7 @@ __decorate([
         if (/^[a-z A-Z]+$/.test(value))
             return value;
         else
-            throw { status: 400, message: `El parametro ${value} no coincide con los parametros` };
+            throw { status: 400, message: `El parametro created_by ${value} no coincide con los parametros` };
     }, { toClassOnly: true }),
     __metadata("design:type", String)
 ], bodegas.prototype, "Creado_por", void 0);
@@ -77,7 +77,7 @@ __decorate([
         if (/^[a-z A-Z]+$/.test(value))
             return value;
         else
-            throw { status: 400, message: `El parametro ${value} no coincide con los parametros` };
+            throw { status: 400, message: `El parametro update_by ${value} no coincide con los parametros` };
     }, { toClassOnly: true }),
     __metadata("design:type", String)
 ], bodegas.prototype, "Actualizado_por", void 0);
@@ -87,7 +87,7 @@ __decorate([
         if (/^[a-z A-Z]+$/.test(value))
             return value;
         else
-            throw { status: 400, message: `El parametro ${value} no coincide con los parametros` };
+            throw { status: 400, message: `El parametro created_at ${value} no coincide con los parametros` };
     }, { toClassOnly: true }),
     __metadata("design:type", String)
 ], bodegas.prototype, "Creado_a", void 0);

@@ -1,4 +1,4 @@
-import { Router, json } from 'express';
+import { Router} from 'express';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -14,7 +14,7 @@ appProducto.use((req, res, next) => {
     next();
 })
 
-appProducto.get('/', (req, res, next) => {
+appProducto.get('/', (req, res) => {
     con.query(
     /*sql*/`SELECT p.*, SUM(i.cantidad) AS Total
             FROM productos AS p
