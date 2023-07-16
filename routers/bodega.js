@@ -52,15 +52,15 @@ appBodegas.get('/', (req, res) => {
  *  
  */
 appBodegas.post('/', (req, res) => {
-    // con.query(
-    //     /*SQL*/ `INSERT INTO bodegas SET ?`,
-    //     req.body,
-    //     (err, data, fils) => {
-    //         console.log(err);
-    //         console.log(data);
-    //         console.log(fils);
-    //         console.log('Se agregó exitosamente :D');
-    //     });
+    con.query(
+        /*SQL*/ `INSERT INTO bodegas SET ?`,
+        req.body,
+        (err, data, fils) => {
+            console.log(err);
+            console.log(data);
+            console.log(fils);
+            console.log('Se agregó exitosamente :D');
+        });
     res.send();
 });
 export default appBodegas;

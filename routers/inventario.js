@@ -3,19 +3,24 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const appBodegas = Router();
+const appInventarios = Router();
 let con = undefined;
 
 const config = JSON.parse(process.env.DATABASE);
 
 
-appBodegas.use((req, res, next) => {
+appInventarios.use((req, res, next) => {
     con = mysql.createPool(config);
     next();
 });
 
-
-appBodegas.post('/', (req, res) => {
+/**
+ * Datos de entrada
+ * @param {id_producto}
+ * @param {id_bodega}
+ * @param {cantidad}
+*/
+appInventarios.post('/', (req, res) => {
     const { id_producto, id_bodega, cantidad } = req.body;
 
     //Verificación
@@ -78,4 +83,4 @@ appBodegas.post('/', (req, res) => {
 });
 
 
-export default appBodegas;
+export default appInventarios;
